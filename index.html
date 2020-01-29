@@ -7,61 +7,47 @@
 <style>
   body {
     font-size: 16px;
-    padding: 20px;
+    padding: 0px;
   }
 
-  .simple-button {
-    display: block;
-    block-size: border-box;
-    background: rgb(123, 152, 246);
-    color: rgb(36, 34, 165);
-    border: rgb(77, 77, 153);
-    border-radius: 5px;
-    padding: 20px;
-    margin: 3 px cursor: pointer;
-    box-shadow: 0px 4px 4px 4px
+  .short-info{
+    position: relative;
+   display: grid;
+   overflow: hidden;
+   height: 100vh;
+   margin: 0px;
+   grid-template-columns:1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   grid-template-areas: 
+            "name name name"
+            "about links photo";
   }
- .main{
-
-
- }
- .photo-container{
-width: 128px;
-height: 128px;
-background: floralwhite;
-border: fuchsia solid 2px;
- }
-.short-inform{
-
-
-
-}
-.links{
-
-
-}
-
+  .photo-block{
+    grid-area: photo;
+    background: pink;
+  }
+  .name-block{
+    grid-area: name;
+    background: brown;
+  }
+  .about-me-block{
+    grid-area: about;
+    background: gray;
+  }
+  .links-block{
+    grid-area: links;
+    background: black;
+  }
+  
 </style>
-
 </head>
-
 <body>
+  <div id="page1" class="short-info">
+    <div class="photo-block"></div>
+    <div class="name-block"></div>
+    <div class="about-me-block"></div>
+    <div class="links-block"></div>    
 
-
- <div class="main">
- </div>
-
-  <div class="photo-container">    
-  <img src=https://steamuserimages-a.akamaihd.net/ugc/793108229627733289/C9AAA61BD8D6BB5A4A04BE56C6BC3F408440BED5/ alt="гык"/> 
- </div>
-
- <div class="short-inform">
- </div>
-
-
-  <div class="links">
   </div>
-   
 </body>
-
 </html>
