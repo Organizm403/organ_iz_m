@@ -17,36 +17,101 @@
    height: 100vh;
    margin: 0px;
    grid-template-columns:1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr;
+   grid-template-rows: 1fr 2fr auto;
    grid-template-areas: 
-            "name name name"
-            "about links photo";
+            "about about about"
+            "photo name name"
+            "photo links links";
   }
   .photo-block{
     grid-area: photo;
     background: pink;
   }
+  .photo-image{
+   width: 100%;
+   height:100%;
+   background-image: url(https://avatars.mds.yandex.net/get-pdb/1016956/dd697057-6c95-4889-9bd9-7670d20559c0/s1200) ;
+   background-size: cover;
+   background-repeat: no-repeat ;
+   background-position: center;   
+
+
+  }
+  .about-me-image{
+   width: 200px;
+   height:200px;
+   border-radius:200px;
+   background-image: url(https://avatars.mds.yandex.net/get-pdb/1016956/dd697057-6c95-4889-9bd9-7670d20559c0/s1200) ;
+   background-size: cover;
+   background-repeat: no-repeat ;
+   background-position: center;   
+   padding: 20px;
+   display: flex ;
+    align-items: center;
+    justify-content: center;
+
+  }
   .name-block{
     grid-area: name;
-    background: brown;
+    background: rgba(255, 0, 0, 0.192);
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    font-weight:bold;
+    color: rgb(76, 0, 255);
   }
   .about-me-block{
     grid-area: about;
-    background: gray;
+    background: rgb(0, 0, 0);
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    font-size: normal;
+    font-weight:bold;
+    color: rgb(255, 255, 255);
+    padding: 30px;
   }
   .links-block{
     grid-area: links;
-    background: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(255, 255, 0, 0.253);
   }
-  
+  .links-block>a {
+    height: 50px;
+    width: 50px;
+    margin: 9px;
+    background: rgb(0, 0, 0);
+  }
+  .links-block>a.link.vk{
+    background: url("https://en.vk.com");
+  }
 </style>
 </head>
 <body>
   <div id="page1" class="short-info">
-    <div class="photo-block"></div>
-    <div class="name-block"></div>
-    <div class="about-me-block"></div>
-    <div class="links-block"></div>    
+    <div class="photo-block">
+      <div class="photo-image"></div>
+    </div>
+    <div class="name-block">
+      organ_iz_m
+    </div>
+    <div class="about-me-block">
+      <div class="about-me-image"></div>
+      ___organ_iz_m____
+      <br>
+     ___  На этой странице вы узнаете немного обо мне ___
+    </div>
+    <div class="links-block">
+      <a herf="https://vk.com/" class="link-vk"></a>
+      <a herf="https://facebook.com/" class="link-facebook"></a>
+      <a herf="https://instagram.com/" class="link-instagram"></a>
+      <a herf="#https://steam.com/" class="link-steam"></a>
+      <a herf="https://twitter.com/" class="link-twitter"></a>
+    </div>    
 
   </div>
 </body>
