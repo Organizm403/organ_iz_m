@@ -10,69 +10,86 @@
     padding: 0px;
   }
 
-  .short-info{
+  .short-info {
     position: relative;
-   display: grid;
-   overflow: hidden;
-   height: 100vh;
-   margin: 0px;
-   grid-template-columns:1fr 1fr 1fr;
-   grid-template-rows: 1fr 2fr auto;
-   grid-template-areas: 
-            "about about about"
-            "photo name name"
-            "photo links links";
+    display: grid;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr auto auto;
+    grid-template-areas:
+      "about about about"
+      "name name photo"
+      "name name photo"
+      "links links links";
   }
-  .photo-block{
+
+  .photo-block {
     grid-area: photo;
-    background: pink;
+    background: rgba(255, 255, 255, 0);
   }
-  .photo-image{
-   width: 100%;
-   height:100%;
-   background-image: url(https://avatars.mds.yandex.net/get-pdb/1016956/dd697057-6c95-4889-9bd9-7670d20559c0/s1200) ;
-   background-size: cover;
-   background-repeat: no-repeat ;
-   background-position: center;   
 
-
+  .photo-image {
+    width: 100%;
+    height: 100%;
+    background-image: url(slava.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
-  .about-me-image{
-   width: 200px;
-   height:200px;
-   border-radius:200px;
-   background-image: url(https://image.voenpro.ru/znachok-4-roty-2-rep-frantsuzskogo-legiona-101.jpg) ;
-   background-size: cover;
-   background-repeat: no-repeat ;
-   background-position: center;   
-   padding: 20px;
-   display: flex ;
+
+  .about-me-image {
+    width: 512px;
+    height: 450px;
+    border-radius: 200px;
+    background-image: url(slava.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    display: flex;
     align-items: center;
     justify-content: center;
 
   }
-  .name-block{
+
+  .name-block {
+    height: 100%;
+    width: 100vh;
     grid-area: name;
-    background: rgba(255, 0, 0, 0.192);
-    display: flex ;
+    background: rgba(68, 71, 255, 0.801);
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 72px;
-    font-weight:bold;
+    font-weight: bold;
     color: rgb(76, 0, 255);
   }
-  .about-me-block{
+
+  .about-me-block {
+    width: 200vh;
+    height: 100vh;
     grid-area: about;
-    background: rgb(0, 0, 0);
-    display: flex ;
+    background: rgba(73, 221, 28, 0.753);
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: normal;
-    font-weight:bold;
-    color: rgb(255, 255, 255);
+    font-weight: bold;
+    color: rgb(216, 66, 66);
     padding: 30px;
   }
-  .links-block{
+
+  .abot-me-text {
+    padding: 30px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .links-block {
     grid-area: links;
     display: flex;
     flex-wrap: wrap;
@@ -80,29 +97,50 @@
     padding: 20px;
     background: rgba(255, 255, 0, 0.253);
   }
+
   .links-block>a {
     height: 50px;
     width: 50px;
     margin: 8px 16px;
     background: rgb(0, 0, 0);
   }
-  .links-block>a.link-vk{
-    background: url("https://pngicon.ru/file/uploads/vk-256x256.png")  no-repeat 50% / cover;
+
+  .links-block>a.link-vk {
+    background: url("https://pngicon.ru/file/uploads/vk-256x256.png") no-repeat 50% / cover;
   }
-   .links-block>a.link-facebook{
-    background: url("data:image/png;base64,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")  no-repeat 50% / cover;
-   }
-   .links-block>a.link-instagram{
-    background: url("https://pngicon.ru/file/uploads/instagram-256x256.png")  no-repeat 50% / cover;
+
+  .links-block>a.link-facebook {
+    background: url("data:image/png;base64,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") no-repeat 50% / cover;
   }
-  .links-block>a.link-steam{
-    background: url("https://vignette.wikia.nocookie.net/counterstrike/images/1/11/Steam_logo_2014-1-.png/revision/latest?cb=20150725184533&path-prefix=ru")  no-repeat 50% / cover;
+
+  .links-block>a.link-instagram {
+    background: url("https://pngicon.ru/file/uploads/instagram-256x256.png") no-repeat 50% / cover;
   }
-  .links-block>a.link-twitter{
-    background: url("https://www.pkicon.com/icons/27836/Twitter-256.png")  no-repeat 50% / cover;
+
+  .links-block>a.link-steam {
+    background: url("https://vignette.wikia.nocookie.net/counterstrike/images/1/11/Steam_logo_2014-1-.png/revision/latest?cb=20150725184533&path-prefix=ru") no-repeat 50% / cover;
+  }
+
+  .links-block>a.link-twitter {
+    background: url("https://www.pkicon.com/icons/27836/Twitter-256.png") no-repeat 50% / cover;
+  }
+
+  .page-block {
+    min-height: 100vh;
+    height: auto;
+  }
+  #page2 {
+    background: gray;
+    display: grid;
+    grid-template-columns:1fr 1fr auto;
+    grid-auto-rows: 1fr auto;
+    grid-template-areas: 
+        "name name photo"
+        "links links links";
   }
 </style>
 </head>
+
 <body>
   <div id="page1" class="short-info">
     <div class="photo-block">
@@ -113,18 +151,29 @@
     </div>
     <div class="about-me-block">
       <div class="about-me-image"></div>
-      ___organ_iz_m____
-      <br>
-     ___  На этой странице вы узнаете немного обо мне ___
+      <div class="abot-me-text">
+        <h2> organ_iz_m
+          <br>
+          На этой странице вы узнаете немного обо мне </h2>
+      </div>
     </div>
-    <div class="links-block">
-      <a href="https://vk.com/" class="link-vk"></a>
-      <a href="https://facebook.com/" class="link-facebook"></a>
-      <a href="https://instagram.com/" class="link-instagram"></a>
-      <a href="https://store.steampowered.com/" class="link-steam"></a>
-      <a href="https://twitter.com/" class="link-twitter"></a>
-    </div>    
-
   </div>
+
+
+  <div id="page2" class="page-block">
+      <div class="name-block">
+          organ_iz_m
+    </div>
+    <div class="photo-block">
+        <div class="photo-image"></div>
+      </div>
+  </div>
+  <div id="page4" class="links-block">
+    <a href="https://vk.com/" class="link-vk"></a>
+    <a href="https://facebook.com/" class="link-facebook"></a>
+    <a href="https://instagram.com/" class="link-instagram"></a>
+    <a href="https://store.steampowered.com/" class="link-steam"></a>
+    <a href="https://twitter.com/" class="link-twitter"></a></div>
 </body>
+
 </html>
